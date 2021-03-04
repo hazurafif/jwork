@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Invoice here.
  *
@@ -13,20 +12,11 @@ public class Invoice
     private String date;
     private int totalFee;
 
-    /**
-     * Constructor for objects of class Invoice
-     */
     public Invoice()
     {
         //initialise instance variables
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
     public static int getId(){
         return 0;
     }

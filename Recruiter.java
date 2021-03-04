@@ -1,3 +1,9 @@
+/**
+ * Write a description of class Recruiter here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class Recruiter
 {
     // instance variables - replace the example below with your own
@@ -48,6 +54,5 @@ public class Recruiter
     public static void setPhoneNumber(String phoneNumber)
     {
     }
-
 }
 
