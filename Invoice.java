@@ -1,8 +1,8 @@
 /**
  * Write a description of class Invoice here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Hanif Zufar Rafif
+ * @version 18/03/2021
  */
 public class Invoice
 {
@@ -11,41 +11,57 @@ public class Invoice
     private int idJob;
     private String date;
     private int totalFee;
+    private Jobseeker jobseeker;
 
-    public Invoice()
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
     {
-        //initialise instance variables
+        this.id = id;
+        this.idJob = idJob;
+        this.date = date;
+        this.totalFee = totalFee;
+        this.jobseeker = jobseeker;
     }
 
-    public static int getId(){
-        return 0;
+    public int getId(){
+        return id;
     }
     
-    public static int getIdJob(){
-        return 0;
+    public int getIdJob(){
+        return idJob;
     }
     
-    public static String getDate(){
-        return "oop";
+    public String getDate(){
+        return date;
     }
     
-    public static int getTotalFee(){
-        return 0;
+    public int getTotalFee(){
+        return totalFee;
     }
     
-    public static void setId(int id){
-        
+    public Jobseeker getJobseeker(){
+        return jobseeker;
     }
     
-    public static void setIdJobs(int idJobs){
-    
+    public void setId(int id){
+        this.id = id;
     }
     
-    public static void setDate(String date){
-
+    public void setIdJob(int idJob){
+        this.idJob = idJob;
     }
     
-    public static void setTotalFee(int totalFee){
-
+    public void setDate(String date){
+        this.date = date;
+    }
+    
+    public void setTotalFee(int totalFee){
+        this.totalFee = totalFee;
+    }
+    
+    public void setJobseeker(Jobseeker jobseeker){
+        this.jobseeker = jobseeker;
+    }
+    
+    public void printData(){
     }
 }
