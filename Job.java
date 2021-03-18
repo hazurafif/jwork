@@ -12,8 +12,12 @@ public class Job
     private Recruiter recruiter;
     private int fee;
     private String category;
-    
-
+    /**
+     * Job untuk membuat Job
+     *
+     * @param  job berisi object job
+     * @return object job
+     */
     public Job(int id, String name, Recruiter recruiter, int fee, String category){
         this.id = id;
         this.name = name;

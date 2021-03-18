@@ -12,6 +12,13 @@ public class Location
     private String city;
     private String description;
     
+    /**
+     * Location untuk membuat Location
+     *
+     * @param  location berisi object location
+     * @return object location
+     */
+    
     public Location(String province, String city, String description){
         this.province = province;
         this.city = city;

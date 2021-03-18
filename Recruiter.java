@@ -13,7 +13,14 @@ public class Recruiter
     private String email;
     private String phoneNumber;
     private Location location;
-
+    
+    /**
+     * Recruiter untuk membuat Recruiter
+     *
+     * @param  recruiter berisi object recruiter
+     * @return object recruiter
+     */
+    
     public Recruiter(int id, String name, String email, String phoneNumber, Location location){
         this.id = id;
         this.name = name;

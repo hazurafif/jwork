@@ -13,6 +13,13 @@ public class Invoice
     private int totalFee;
     private Jobseeker jobseeker;
 
+    /**
+     * Invoice untuk membuat Invoice
+     *
+     * @param  invoice berisi object invoice
+     * @return object invoice
+     */
+    
     public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
     {
         this.id = id;

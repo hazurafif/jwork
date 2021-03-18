@@ -7,6 +7,13 @@
 public class DatabaseJob
 {
     private String[] listJob;
+    
+    /**
+     * DatabaseJob untuk membuat DatabaseJob
+     *
+     * @param  DatabaseJob berisi object DatabaseJob
+     * @return object DatabaseJob
+     */
 
     public DatabaseJob(String[] listJob){
         listJob = new String[10];

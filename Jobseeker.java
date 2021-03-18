@@ -12,6 +12,13 @@ public class Jobseeker
     private String email;
     private String password;
     private String joinDate;
+    
+    /**
+     * Jobseeker untuk membuat Jobseeker
+     *
+     * @param  jobseeker berisi object jobseeker
+     * @return object jobseeker
+     */
 
     public Jobseeker(int id, String name, String email, String password, String joinDate){
         this.id = id;
