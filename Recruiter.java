@@ -10,8 +10,7 @@ public class Recruiter
     private int id;
     private String name;
     private String email;
-    private String password;
-    private String joinDate;
+    private String phoneNumber;
 
     public Recruiter()
     {
@@ -39,15 +38,15 @@ public class Recruiter
         return "oop";
     }
     
-    public static void setid(int id)
+    public static void setId(int id)
     {
     }
     
-    public static void setEmail(String Email)
+    public static void setEmail(String email)
     {
     }
     
-    public static void setName(String Name)
+    public static void setName(String name)
     {
     }
     

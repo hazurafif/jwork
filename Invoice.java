@@ -41,11 +41,11 @@ public class Invoice
     
     }
     
-    public static String setDate(String date){
-        return "";
+    public static void setDate(String date){
+
     }
     
-    public static String setTotalFee(int totalFee){
-        return "";
+    public static void setTotalFee(int totalFee){
+
     }
 }

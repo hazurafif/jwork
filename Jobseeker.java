@@ -38,7 +38,7 @@ public class Jobseeker
         return "oop";
     }
     
-     public static String joinDate()
+     public static String getJoinDate()
     {
         return "oop";
     }
@@ -47,7 +47,7 @@ public class Jobseeker
     {
     }
     
-    public static void setName(String Name)
+    public static void setName(String name)
     {
     }
     
