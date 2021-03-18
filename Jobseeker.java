@@ -62,5 +62,6 @@ public class Jobseeker
     }
     
     public void printData(){
+        System.out.println(getName());
     }
 }

@@ -63,6 +63,7 @@ public class Recruiter
     }
     
     public void printData(){
+        System.out.println(getName());
     }
 }
 
