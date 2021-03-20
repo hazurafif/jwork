@@ -15,7 +15,7 @@ public class DatabaseJob
      * @return list DatabaseJob
      */
     public DatabaseJob(String[] listJob){
-        listJob = new String[10];
+        listJob = new String[0];
     }
     
     /**
@@ -52,9 +52,9 @@ public class DatabaseJob
      * getListJob untuk mengambil daftar Job
      *
      * @param job berisi object job
-     * @return boolean (untuk sementara)
+     * @return null
      */
     public String[] getListJob(){
-        return listJob;
+        return null;
     }
 }

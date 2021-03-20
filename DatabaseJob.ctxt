@@ -15,5 +15,5 @@ comment4.target=Job\ getJob()
 comment4.text=\r\n\ getJob\ untuk\ mengambil\ Job\r\n\r\n\ @param\ job\ berisi\ object\ job\r\n\ @return\ null\r\n
 comment5.params=
 comment5.target=java.lang.String[]\ getListJob()
-comment5.text=\r\n\ getListJob\ untuk\ mengambil\ daftar\ Job\r\n\r\n\ @param\ job\ berisi\ object\ job\r\n\ @return\ boolean\ (untuk\ sementara)\r\n
+comment5.text=\r\n\ getListJob\ untuk\ mengambil\ daftar\ Job\r\n\r\n\ @param\ job\ berisi\ object\ job\r\n\ @return\ null\r\n
 numComments=6
