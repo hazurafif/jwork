@@ -16,10 +16,12 @@ public class Invoice
     /**
      * Invoice untuk membuat Invoice
      *
-     * @param  invoice berisi object invoice
-     * @return object invoice
+     * @param  id - merupakan nilai inputan untuk variable id
+     * @param idJob - merupakan nilai inputan untuk variable idJob
+     * @param totalFee - merupakan nilai inputan untuk variable totalFee
+     * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
+     * @return object Invoice
      */
-    
     public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
     {
         this.id = id;
@@ -29,46 +31,111 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
 
+    /**
+     * getId untuk mengambil id
+     *
+     * @return id
+     */
     public int getId(){
         return id;
     }
     
+    /**
+     * getIdJob untuk mengambil idJob
+     *
+     * @return idJob
+     */
     public int getIdJob(){
         return idJob;
     }
     
+    /**
+     * getDate untuk mengambil date
+     *
+     * @return date
+     */
     public String getDate(){
         return date;
     }
     
+    /**
+     * getTotalFee untuk mengambil totalFee
+     *
+     * @return totalFee
+     */
     public int getTotalFee(){
         return totalFee;
     }
     
+    /**
+     * getJobseeker untuk mengambil objek Jobseeker
+     *
+     * @return jobseeker
+     */
     public Jobseeker getJobseeker(){
         return jobseeker;
     }
     
+    /**
+     * setId untuk mengisi id
+     *
+     * @param  id
+     * @return id
+     */
     public void setId(int id){
         this.id = id;
     }
     
+    /**
+     * getIdJob untuk mengambil idJob
+     *
+     * @param idJob
+     * @return idJob
+     */
     public void setIdJob(int idJob){
         this.idJob = idJob;
     }
     
+    /**
+     * getDate untuk mengambil date
+     *
+     * @param date
+     * @return date
+     */
     public void setDate(String date){
         this.date = date;
     }
     
+    /**
+     * getTotalFee untuk mengambil totalFee
+     *
+     * @param totalFee
+     * @return totalFee
+     */
     public void setTotalFee(int totalFee){
         this.totalFee = totalFee;
     }
     
+    /**
+     * setJobseeker untuk mengisi objek Jobseeker
+     *
+     * @param Jobseeker objek jobseeker
+     * @return jobseeker
+     */
     public void setJobseeker(Jobseeker jobseeker){
         this.jobseeker = jobseeker;
     }
-    
+
+    /**
+     * printData untuk memprint data
+     *
+     * @return
+     */
     public void printData(){
+        System.out.println(getId());
+        System.out.println(getIdJob());
+        System.out.println(getDate());
+        System.out.println(getTotalFee());
+        System.out.println(getJobseeker());
     }
 }
