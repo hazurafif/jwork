@@ -15,7 +15,7 @@ public class DatabaseJob
      * @return list DatabaseJob
      */
     public DatabaseJob(String[] listJob){
-        listJob = new String[0];
+        listJob = new String[10];
     }
     
     /**
