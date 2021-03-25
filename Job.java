@@ -132,6 +132,6 @@ public class Job
      * @return
      */
     public void printData(){
-        System.out.println(getCategory());
+        System.out.println(getName());
     }
 }

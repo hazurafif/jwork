@@ -10,7 +10,6 @@ public class DatabaseRecruiter
     private String[] listRecruiter;
     
     public DatabaseRecruiter(String[] listRecruiter){
-        listRecruiter = new String[10];
     }
        
     public static boolean addRecruiter(Recruiter recruiter){
@@ -22,10 +21,10 @@ public class DatabaseRecruiter
     }
     
     public Recruiter getRecruiter(){
-        return null;
+        return getRecruiter();
     }
     
     public String[] getListRecruiter(){
-        return null;
+        return getListRecruiter();
     }
 }

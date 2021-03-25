@@ -16,7 +16,7 @@ public class Jwork
         Jobseeker jobseeker1 = new Jobseeker (1, "Zufar", "zufar@ui.ac.id", "zufar123", "Maret 2021");
         Invoice invoice1 = new Invoice (1, 1, "Maret 2021", 5000000, jobseeker1);
         System.out.println(recruiter1.getName());
-        recruiter1.setName("MK");
+        recruiter1.setName("Mustofa");
         System.out.println(recruiter1.getName());
         job1.printData();
         
