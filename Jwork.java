@@ -10,16 +10,9 @@ public class Jwork
     }
     
     public static void main(String[] args) {
-        Location location1 = new Location ("Jakarta", "Jakarta Pusat", "RS");
+        Location location1 = new Location ("Jakarta", "Jakarta Pusat", "Dekat Mall");
         Recruiter recruiter1 = new Recruiter (1, "Hanif", "hanif.zufar@ui.ac.id", "085781726006", location1);
-        Job job1 = new Job (1,"Zufar",recruiter1,5000000,"IT");
-        Jobseeker jobseeker1 = new Jobseeker (1, "Zufar", "zufar@ui.ac.id", "zufar123", "Maret 2021");
-        Invoice invoice1 = new Invoice (1, 1, "Maret 2021", 5000000, jobseeker1);
-        System.out.println(recruiter1.getName());
-        recruiter1.setName("Mustofa");
-        System.out.println(recruiter1.getName());
+        Job job1 = new Job (1,"Junior Desainer",recruiter1,5000000,JobCategory.WebDeveloper);
         job1.printData();
-        
-        
     }
 }
