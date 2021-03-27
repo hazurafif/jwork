@@ -19,11 +19,4 @@ public enum PaymentType
     public String toString(){
         return type;
     }
-    
-    public static void main(String[] args) {
-        PaymentType type1 = PaymentType.BankPayment;
-        PaymentType type2 = PaymentType.EwalletPayment;
-        System.out.println(type1);
-        System.out.println(type2);
-    }
 }

@@ -4,9 +4,9 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Jwork
+public class JWork
 {
-    public Jwork(){
+    public JWork(){
     }
     
     public static void main(String[] args) {
