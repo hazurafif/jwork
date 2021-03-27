@@ -12,6 +12,8 @@ public class Invoice
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
     /**
      * Invoice untuk membuat Invoice
@@ -22,7 +24,7 @@ public class Invoice
      * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
      * @return object Invoice
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status)
     {
         this.id = id;
         this.idJob = idJob;
@@ -76,6 +78,14 @@ public class Invoice
         return jobseeker;
     }
     
+    public PaymentType getPaymentType(){
+        return paymentType;
+    }
+    
+    public InvoiceStatus getInvoiceStatus(){
+        return status;
+    }
+    
     /**
      * setId untuk mengisi id
      *
@@ -87,7 +97,7 @@ public class Invoice
     }
     
     /**
-     * getIdJob untuk mengambil idJob
+     * setIdJob untuk mengambil idJob
      *
      * @param idJob
      * @return idJob
@@ -97,7 +107,7 @@ public class Invoice
     }
     
     /**
-     * getDate untuk mengambil date
+     * setDate untuk mengambil date
      *
      * @param date
      * @return date
@@ -107,7 +117,7 @@ public class Invoice
     }
     
     /**
-     * getTotalFee untuk mengambil totalFee
+     * setTotalFee untuk mengambil totalFee
      *
      * @param totalFee
      * @return totalFee
@@ -125,6 +135,14 @@ public class Invoice
     public void setJobseeker(Jobseeker jobseeker){
         this.jobseeker = jobseeker;
     }
+    
+    public void setPaymentType(PaymentType paymentType){
+        this.paymentType = paymentType;
+    }
+    
+    public void setInvoiceStatus(InvoiceStatus status){
+        this.status = status;
+    }
 
     /**
      * printData untuk memprint data
@@ -132,6 +150,12 @@ public class Invoice
      * @return
      */
     public void printData(){
-        System.out.println(getTotalFee());
+        System.out.println("========== INVOICE ==========");
+        System.out.println("ID: "+id);
+        System.out.println("ID Job: "+idJob);
+        System.out.println("tanggal: "+date);
+        System.out.println("Seeker: "+jobseeker.getName());
+        System.out.println("Fee: "+totalFee);
+        System.out.println("Status: "+status);
     }
 }
