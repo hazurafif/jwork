@@ -7,8 +7,8 @@
  */
 public enum PaymentType
 {
-    BankPayment("Bank Payment"), 
-    EwalletPayment("Ewallet Payment");
+    BankPayment("BankPayment"), 
+    EwalletPayment("EwalletPayment");
     
     private String type;
     
