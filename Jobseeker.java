@@ -6,7 +6,7 @@
  */
 public class Jobseeker
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int id;
     private String name;
     private String email;
@@ -14,10 +14,13 @@ public class Jobseeker
     private String joinDate;
     
     /**
-     * Jobseeker untuk membuat Jobseeker
+     * Constructor for objects of class Jobseeker
      *
-     * @param  jobseeker berisi object jobseeker
-     * @return object jobseeker
+     * @param id merupakan nilai inputan untuk variable id
+     * @param name  merupakan nilai inputan untuk variable name
+     * @param email  merupakan nilai inputan untuk variable email
+     * @param password merupakan nilai inputan untuk variable password
+     * @param joinDate merupakan nilai inputan untuk variable joinDate
      */
     public Jobseeker(int id, String name, String email, String password, String joinDate){
         this.id = id;
@@ -28,14 +31,14 @@ public class Jobseeker
     }
 
     /**
-     * getId untuk mengisi Id
+     * getId untuk mengambil Id
      *
      * @return id
      */
     public int getId(){
         return id;
     }
-
+    
     /**
      * getName untuk mengambil name
      *
@@ -122,6 +125,10 @@ public class Jobseeker
         this.joinDate = joinDate;
     }
     
+    /**
+     * printData untuk memprint data
+     *
+     */
     public void printData(){
         System.out.println(getId());
         System.out.println(getName());

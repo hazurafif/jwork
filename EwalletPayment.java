@@ -1,19 +1,38 @@
-
 /**
  * Write a description of class EwalletPayment here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Hanif Zufar Rafif
+ * @version 01/04/2021
  */
 public class EwalletPayment extends Invoice
 {
+    // instance variables
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
     
+    /**
+     * Constructor for objects of class EwalletPayment
+     *
+     * @param  id - merupakan nilai inputan untuk variable id
+     * @param job - merupakan nilai inputan untuk variable job
+     * @param date - merupakan nilai inputan untuk variable date
+     * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
+     * @param invoiceStatus - merupakan nilai inputan untuk variable status
+     */
     public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
         super(id, job, date, jobseeker, invoiceStatus);
     }
     
+    /**
+     * Constructor for objects of class EwalletPayment
+     * 
+     * @param id - merupakan nilai inputan untuk variable id
+     * @param job - merupakan nilai inputan untuk variable job
+     * @param date - merupakan nilai inputan untuk variable date (tanggal)
+     * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
+     * @param invoiceStatus - merupakan nilai inputan untuk variable status
+     * @param bonus merupakan - nilai inputan untuk variable bonus
+     */
     public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus){
         super(id, job, date, jobseeker, invoiceStatus);
         this.setBonus(bonus);

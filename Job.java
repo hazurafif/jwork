@@ -6,7 +6,7 @@
  */
 public class Job
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int id;
     private String name;
     private Recruiter recruiter;
@@ -14,7 +14,7 @@ public class Job
     private JobCategory category;
     
     /**
-     * Job untuk membuat Job
+     * Constructor for objects of class Job
      *
      * @param  id - merupakan nilai inputan untuk variable id
      * @param name - merupakan nilai inputan untuk variable name
@@ -127,9 +127,8 @@ public class Job
     }
     
     /**
-     * printData untuk memprint data
+     * printData untuk memprint data Job
      *
-     * @return
      */
     public void printData(){
         System.out.println("========== JOB ==========");

@@ -2,14 +2,18 @@
 /**
  * Write a description of class EwalletPayment here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Hanif Zufar Rafif
+ * @version 04/03/2021
  */
 public class BankPayment extends Invoice
 {
+    // instance variables
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
     
+    /**
+     * Constructor for objects of class BankPayment
+     */
     public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
         super(id, job, date, jobseeker, invoiceStatus);
     }

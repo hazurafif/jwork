@@ -6,6 +6,7 @@
  */
 public class DatabaseJob
 {
+    //instance variable
     private static String[] listJob;
     /**
      * addJob untuk menambah Job
@@ -30,7 +31,6 @@ public class DatabaseJob
     /**
      * getJob untuk mengambil Job
      *
-     * @param job berisi object job
      * @return null
      */
     public static Job getJob(){
@@ -40,8 +40,7 @@ public class DatabaseJob
     /**
      * getListJob untuk mengambil daftar Job
      *
-     * @param job berisi object job
-     * @return null
+     * @return listJob
      */
     public static String[] getListJob(){
         return listJob;

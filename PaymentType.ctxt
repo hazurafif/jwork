@@ -3,6 +3,7 @@ comment0.target=PaymentType
 comment0.text=\r\n\ Enumeration\ class\ PaymentType\ -\ write\ a\ description\ of\ the\ enum\ class\ here\r\n\r\n\ @author\ Hanif\ Zufar\ Rafif\r\n\ @version\ 25/03/2021\r\n
 comment1.params=type
 comment1.target=PaymentType(java.lang.String)
+comment1.text=\r\n\ PaymentType\ untuk\ mengisi\ type\r\n\r\n\ @param\ variable\ type\ \ \ \ \ \r\n
 comment2.params=
 comment2.target=java.lang.String\ toString()
 numComments=3

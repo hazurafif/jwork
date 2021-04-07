@@ -6,13 +6,13 @@
  */
 public class Location
 {
-
+    // instance variables
     private String province;
     private String city;
     private String description;
     
     /**
-     * Location untuk membuat Location
+     * Constructor for objects of class Location
      *
      * @param province - merupakan nilai inputan untuk variable province
      * @param city - merupakan nilai inputan untuk variable city
@@ -26,7 +26,7 @@ public class Location
     }
     
     /**
-     * getProvince untuk membuat province
+     * getProvince untuk mengambil province
      *
      * @return province
      */
@@ -35,7 +35,7 @@ public class Location
     }
 
     /**
-     * getCity untuk membuat city
+     * getCity untuk mengambil city
      *
      * @return city
      */
@@ -44,7 +44,7 @@ public class Location
     }
     
     /**
-     * getDescription untuk membuat description
+     * getDescription untuk mengambil description
      *
      * @return description
      */
@@ -84,8 +84,6 @@ public class Location
     
     /**
      * printData untuk memprint data
-     *
-     * @return
      */    
     public void printData(){
         System.out.println(getProvince());

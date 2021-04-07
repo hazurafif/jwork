@@ -1,4 +1,3 @@
-
 /**
  * Enumeration class PaymentType - write a description of the enum class here
  *
@@ -11,11 +10,16 @@ public enum PaymentType
     EwalletPayment("EwalletPayment");
     
     private String type;
-    
+    /**
+     * PaymentType untuk mengisi type
+     *
+     * @param variable type     
+    */
     private PaymentType(String type){
         this.type = type;
     }
     
+    @Override
     public String toString(){
         return type;
     }

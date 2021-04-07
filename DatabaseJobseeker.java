@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class DatabaseJobseeker here.
  *
@@ -7,13 +6,12 @@
  */
 public class DatabaseJobseeker
 {
+    // instance variables
     private static String[] listJobseeker;
-    /**
-     * Constructor untuk objek pada kelas DatabaseJobseeker
-     */
     
     /**
-     * addJobseeke untuk menambahkan jobseeker
+     * addJobseeker untuk menambahkan jobseeker
+     * 
      * @param recruiter
      * @return boolean
      */
@@ -23,6 +21,7 @@ public class DatabaseJobseeker
     
     /**
      * removeJobseeker menghapus jobseeker
+     * 
      * @param recruiter
      * @return boolean
      */

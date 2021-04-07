@@ -17,11 +17,11 @@ public  abstract class Invoice
     /**
      * Constructor for objects of class Invoice
      *
-     * @param  id - merupakan nilai inputan untuk variable id
-     * @param idJob - merupakan nilai inputan untuk variable idJob
-     * @param totalFee - merupakan nilai inputan untuk variable totalFee
+     * @param id - merupakan nilai inputan untuk variable id
+     * @param job - merupakan nilai inputan untuk variable job
+     * @param date - merupakan nilai inputan untuk variable date (tanggal)
      * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
-     * @return object Invoice
+     * @param invoiceStatus - merupakan nilai inputan untuk variable status
      */
     public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
@@ -98,7 +98,7 @@ public  abstract class Invoice
     }
     
     /**
-     * setJob untuk mengambil Job
+     * setJob untuk mengisi Job
      *
      * @param Job
      */
@@ -107,7 +107,7 @@ public  abstract class Invoice
     }
     
     /**
-     * setDate untuk mengambil date
+     * setDate untuk mengisi date
      *
      * @param date
      */
@@ -116,7 +116,7 @@ public  abstract class Invoice
     }
     
     /**
-     * setTotalFee untuk mengambil totalFee
+     * setTotalFee untuk mengisi totalFee
      *
      * @param totalFee
      */

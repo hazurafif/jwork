@@ -1,9 +1,8 @@
-
 /**
  * Enumeration class JobCategory - write a description of the enum class here
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Hanif Zufar Rafif
+ * @version 25/03/2021
  */
 public enum JobCategory
 {

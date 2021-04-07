@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class DatabaseRecruiter here.
  *
@@ -7,11 +6,9 @@
  */
 public class DatabaseRecruiter
 {
+    // instance variables
     private static String[] listRecruiter;
-    /**
-     * Constructor untuk objek pada kelas DatabaseRecruiter
-     */
-       
+    
     /**
      * addRecruiter untuk menambahkan recruiter
      * @param recruiter

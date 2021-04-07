@@ -17,7 +17,7 @@ public class Recruiter
     /**
      * Recruiter untuk membuat recruiter
      *
-     * @param  id - merupakan nilai inputan untuk variable id
+     * @param id - merupakan nilai inputan untuk variable id
      * @param name - merupakan nilai inputan untuk variable name
      * @param email - merupakan nilai inputan untuk variable email
      * @param phoneNumber - merupakan nilai inputan untuk variable phoneNumber
@@ -129,8 +129,6 @@ public class Recruiter
     
     /**
      * printData untuk memprint data
-     *
-     * @return
      */
     public void printData(){
         System.out.println(getId());
