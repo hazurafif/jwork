@@ -6,7 +6,7 @@
  */
 public class JWork
 {
-    // instance variables - replace the example below with your own
+    // instance variables-replace the example below with your own
     public JWork(){
     }
     
