@@ -1,3 +1,5 @@
+import java.util.GregorianCalendar;
+
 /**
  * Write a description of class Jwork here.
  *
@@ -11,14 +13,12 @@ public class JWork
     }
     
     public static void main(String[] args) {
-        Location location1 = new Location("Jakarta", "Jakarta Timur", "Tempat Lahir");
-        Recruiter recruiter1 = new Recruiter(1, "rafif", "rafif@ui.ac.id", "085781726006", location1);
-        Job job1 = new Job(1, "Junior Dev", recruiter1, 50, JobCategory.WebDeveloper);
-        Jobseeker jobseeker1 = new Jobseeker(1, "zufar", "zufar@ui.ac.id", "zufar", "1 April 2021");
-        BankPayment payment1 = new BankPayment(1, job1, "1 Mei 2021",jobseeker1,InvoiceStatus.Finished, 0);
-        BankPayment payment2 = new BankPayment(2, job1, "1 Mei 2021",jobseeker1,InvoiceStatus.Finished, 22);
-        payment1.printData();
-        payment2.printData();
+        Jobseeker jobseeker1 = new Jobseeker(1, "Zufar", "hanif.zufar@ui.ac.id", "HanifZufar", new GregorianCalendar(2000, 7, 22));
+        Jobseeker jobseeker2 = new Jobseeker(2, "Zufar", "hanif.zufar@ui.ac.id", "Hanif123", 2000, 3, 28);
+        Jobseeker jobseeker3 = new Jobseeker(3, "Zufar", "hanif.zufar@ui.ac.id", "Hanif123");
+        System.out.println(jobseeker1.toString());
+        System.out.println(jobseeker2.toString());
+        System.out.println(jobseeker3.toString());
     }
         
 }

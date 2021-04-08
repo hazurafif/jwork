@@ -127,14 +127,8 @@ public class Recruiter
         this.location = location;
     }
     
-    /**
-     * printData untuk memprint data
-     */
-    public void printData(){
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println(getEmail());
-        System.out.println(getLocation());
+    public String toString(){
+        return "Id = " +getId()+ "\nNama = " +getName()+"\nEmail = " +getEmail()+"\nLocation = " +getLocation();
     }
 }
 
