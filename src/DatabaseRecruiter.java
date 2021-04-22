@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  * Write a description of class DatabaseRecruiter here.
  *
@@ -7,39 +8,58 @@
 public class DatabaseRecruiter
 {
     // instance variables
-    private static String[] listRecruiter;
-    
+    private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
+    private static int lastId = 0;
+
+    public static ArrayList<Recruiter> getRecruiterDatabase() {
+        return RECRUITER_DATABASE;
+    }
+
+    public static int getLastId() {
+        return lastId;
+    }
+
+    public static Recruiter getRecruiterById(int id) {
+        Recruiter temp = null;
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()){
+                temp = recruiter;
+            }
+            else{
+                temp =  null;
+            }
+        }
+        return temp;
+    }
+
     /**
      * addRecruiter untuk menambahkan recruiter
      * @param recruiter
      * @return boolean
      */
-    public static boolean addRecruiter(Recruiter recruiter){
-        return false;
+    public static boolean addRecruiter(Recruiter recruiter) {
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = recruiter.getId();
+        return true;
     }
     
     /**
      * removeRecruiter menghapus recruiter
-     * @param recruiter
+     * @param id
      * @return boolean
      */
-    public static boolean removeRecruiter(Recruiter recruiter){
-        return false;
-    }
-    
-    /**
-     * getRecruiter mendapatkan recuiter
-     * @return null
-     */
-    public static Recruiter getRecruiter(){
-        return null;
-    }
-    
-    /**
-     * getListRecruiter mendapatkan listrecuiter
-     * @return String[]
-     */
-    public static String[] getListRecruiter(){
-        return listRecruiter;
+    public static boolean removeRecruiter(int id)
+    {
+        boolean temp = true;
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()){
+                RECRUITER_DATABASE.remove(id);
+                temp = true;
+            }
+            else{
+                temp = false;
+            }
+        }
+        return temp;
     }
 }

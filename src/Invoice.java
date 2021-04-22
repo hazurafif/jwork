@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
@@ -12,7 +13,7 @@ public  abstract class Invoice
 {
     // instance variables
     private int id;
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
@@ -22,18 +23,16 @@ public  abstract class Invoice
      * Constructor for objects of class Invoice
      *
      * @param id - merupakan nilai inputan untuk variable id
-     * @param job - merupakan nilai inputan untuk variable job
-     * @param date - merupakan nilai inputan untuk variable date (tanggal)
+     * @param jobs - merupakan nilai inputan untuk variable job
      * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
-     * @param invoiceStatus - merupakan nilai inputan untuk variable status
      */
-    public Invoice(int id, Job job, Calendar date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         this.id = id;
-        this.job = job;
-        this.date = Calendar.getInstance();
+        this.jobs = jobs;
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
+        this.invoiceStatus = InvoiceStatus.OnGoing;
     }
 
     /**
@@ -50,8 +49,8 @@ public  abstract class Invoice
      *
      * @return Job
      */
-    public Job getJob(){
-        return job;
+    public ArrayList<Job> getJobs(){
+        return jobs;
     }
     
     /**
@@ -104,10 +103,10 @@ public  abstract class Invoice
     /**
      * setJob untuk mengisi Job
      *
-     * @param Job
+     * @param jobs
      */
-    public void setJob(Job job){
-        this.job = job;
+    public void setJobs(ArrayList<Job> jobs){
+        this.jobs = jobs;
     }
     
     /**
@@ -116,7 +115,7 @@ public  abstract class Invoice
      * @param date
      */
     public void setDate(Calendar date){
-        this.date = Calendar.getInstance();
+        this.date = date;
     }
     
     public void setDate(int year, int month, int dayOfMonth){
@@ -125,15 +124,13 @@ public  abstract class Invoice
     
     /**
      * setTotalFee untuk mengisi totalFee
-     *
-     * @param totalFee
      */
     public abstract void setTotalFee();
     
     /**
      * setJobseeker untuk mengisi objek Jobseeker
      *
-     * @param Jobseeker objek jobseeker
+     * @param jobseeker objek jobseeker
      */
     public void setJobseeker(Jobseeker jobseeker){
         this.jobseeker = jobseeker;
