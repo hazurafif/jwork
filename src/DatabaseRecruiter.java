@@ -50,7 +50,7 @@ public class DatabaseRecruiter
      */
     public static boolean removeRecruiter(int id)
     {
-        boolean temp = true;
+        boolean temp = false;
         for (Recruiter recruiter: RECRUITER_DATABASE) {
             if (id == recruiter.getId()){
                 RECRUITER_DATABASE.remove(id);

@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class DatabaseBonus {
     // instance variables
-    private static ArrayList<Bonus> BONUS_DATABASE;
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
     private static int lastId = 0;
 
     public static ArrayList<Bonus> getBonusDatabase(){

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 /**
@@ -17,10 +18,18 @@ public class JWork
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1 , "Raf", "raf@ui.ac.id", "Raf12345", 2021, 04, 22));
         System.out.println("\n=====================Jobseeker Database====================\n");
         System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
-        DatabaseJob.addJob(new Job(1, "FrontEnd Engineer TokoA", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.FrontEnd));
-        DatabaseJob.addJob(new Job(1, "Data Analyst TokoB", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.DataAnalyst));
-        DatabaseJob.addJob(new Job(1, "Data Scientist TokoC", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.DataScientist));
+        ArrayList<Job> job1 = new ArrayList<Job>();
+        ArrayList<Job> job2 = new ArrayList<Job>();
+        ArrayList<Job> job3 = new ArrayList<Job>();
+        job1.add(new Job(1, "FrontEnd Engineer TokoA", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.FrontEnd));
+        job2.add(new Job(1, "Data Analyst TokoB", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.DataAnalyst));
+        job3.add(new Job(1, "Data Scientist TokoC", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.DataScientist));
         System.out.println("\n=====================Job Database By Category====================\n");
         System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
+        DatabaseBonus.addBonus(new Bonus(1, "HZR111", 1000, 500, false));
+        DatabaseBonus.addBonus(new Bonus(2, "HZR111", 1000, 500, true));
+        System.out.println(DatabaseBonus.getBonusById(1));
+        System.out.println(DatabaseBonus.getBonusById(2));
+
     }   
 }

@@ -141,7 +141,7 @@ public  abstract class Invoice
      *
      * @param invoiceStatus
      */
-    public void setInvoiceStatus(InvoiceStatus invoiceStatus){
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus) {
         this.invoiceStatus = invoiceStatus;
     }
 

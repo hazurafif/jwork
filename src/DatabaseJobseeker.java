@@ -67,7 +67,7 @@ public class DatabaseJobseeker{
      */
     public static boolean removeJobseeker(int id){
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
-            if (jobseeker.getId() == jobseeker.getId()) {
+            if (jobseeker.getId() == id) {
                 JOBSEEKER_DATABASE.remove(jobseeker);
                 return true;
             }
