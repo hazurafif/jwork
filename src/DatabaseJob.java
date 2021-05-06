@@ -35,47 +35,65 @@ public class DatabaseJob
     /**
      * removeJob untuk menghapus Job
      *
-     * @param job berisi object job
+     * @param id berisi object job
      * @return boolean
      */
-    public static boolean remove(Job job){
-        for (Job job1 : JOB_DATABASE){
-            if (job.getId() == job1.getId()){
-                JOB_DATABASE.remove(job);
-                return true;
+    public static boolean removeJob(int id) throws JobNotFoundException {
+        boolean status = false;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                JOB_DATABASE.remove(element);
+                status = true;
+                break;
             }
         }
-        return false;
+        if (!status){
+            throw new JobNotFoundException(id);
+        }
+
+        return status;
     }
-    
-    public static Job getJobById(int id){
-        Job temp = null;
-        for (Job job : JOB_DATABASE){
-            if (id == job.getId()){
-                temp = job;
+
+    public static Job getJobById(int id) throws JobNotFoundException {
+        Job result = null;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                result = element;
+                return result;
             }
         }
-        return temp;
+        if (result == null){
+            throw new JobNotFoundException(id);
+        }
+
+        return result;
     }
+
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
-        ArrayList<Job> temp = new ArrayList<Job>();
-        for (Job job : JOB_DATABASE) {
-            if (recruiterId == job.getRecruiter().getId()) {
-                temp.add(job);
-            } else {
-                return null;
+        ArrayList<Job> result = null;
+
+        for (Job element : JOB_DATABASE) {
+            if (element.getRecruiter().getId() == recruiterId) {
+                if (result == null) {
+                    result = new ArrayList<Job>();
+                }
+                result.add(element);
             }
         }
-        return temp;
+        return result;
     }
 
     public static ArrayList<Job> getJobByCategory(JobCategory category) {
-        ArrayList<Job> temp = new ArrayList<Job>();
-        for (int i = 0; i < JOB_DATABASE.size(); i++) {
-            if (category == JOB_DATABASE.get(i).getCategory()) {
-                temp.add(JOB_DATABASE.get(i));
+        ArrayList<Job> result = null;
+
+        for (Job element : JOB_DATABASE) {
+            if (element.getCategory() == category) {
+                if (result == null) {
+                    result = new ArrayList<Job>();
+                }
+                result.add(element);
             }
         }
-        return temp;
+        return result;
     }
 }

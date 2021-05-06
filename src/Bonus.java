@@ -45,7 +45,7 @@ public class Bonus
      *
      * @return referralCode
      */
-    public String getReferralCode(){
+    public String getReferralCode() {
         return referralCode;
     }
     
