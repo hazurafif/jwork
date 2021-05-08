@@ -12,16 +12,20 @@ public class DatabaseInvoice {
         return lastId;
     }
 
-    public static Invoice getInvoiceById(int id) {
-        Invoice temp = null;
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException {
+        Invoice result = null;
         for (Invoice invoice : INVOICE_DATABASE) {
             if (id == invoice.getId()) {
-                temp = invoice;
+                result = invoice;
             } else {
-                temp = null;
+                result = null;
             }
         }
-        return temp;
+        if (result == null){
+            throw new InvoiceNotFoundException(id);
+        }
+
+        return result;
     }
 
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId) {
@@ -37,7 +41,12 @@ public class DatabaseInvoice {
         return temp;
     }
 
-    public static boolean addInvoice(Invoice invoice) {
+    public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
+        for (Invoice element : INVOICE_DATABASE) {
+            if (element.getInvoiceStatus() == InvoiceStatus.OnGoing) {
+                throw new OngoingInvoiceAlreadyExistsException(invoice);
+            }
+        }
         INVOICE_DATABASE.add(invoice);
         lastId = invoice.getId();
         return true;
@@ -56,17 +65,19 @@ public class DatabaseInvoice {
         return temp;
     }
 
-    public static boolean removeInvoice(int id) {
-        boolean temp = true;
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
+        boolean status = true;
         for (Invoice invoice : INVOICE_DATABASE) {
             if (id == invoice.getId()) {
                 INVOICE_DATABASE.remove(id);
-                temp = true;
-            } else {
-                temp = false;
+                status = true;
+                break;
             }
         }
-        return temp;
+        if (!status){
+            throw new InvoiceNotFoundException(id);
+        }
+        return status;
     }
 
 }
