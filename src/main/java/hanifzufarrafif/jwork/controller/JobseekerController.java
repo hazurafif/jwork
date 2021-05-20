@@ -1,16 +1,14 @@
 package hanifzufarrafif.jwork.controller;
 
-import hanifzufarrafif.jwork.*;
+import hanifzufarrafif.jwork.DatabaseJobseeker;
+import hanifzufarrafif.jwork.EmailAlreadyExistsException;
+import hanifzufarrafif.jwork.JobSeekerNotFoundException;
+import hanifzufarrafif.jwork.Jobseeker;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/jobseeker")
 @RestController
 public class JobseekerController {
-
-    @RequestMapping("")
-    public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
-        return "Hello " + name;
-    }
 
     @RequestMapping("/{id}")
     public Jobseeker getJobseekerById(@PathVariable int id) {
@@ -24,10 +22,16 @@ public class JobseekerController {
         return jobseeker;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public Jobseeker addJobseeker(@RequestParam(value="name") String name,
-                                  @RequestParam(value="email") String email,
-                                  @RequestParam(value="password") String password)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
+                                    @RequestParam(value="password") String password){
+        return(DatabaseJobseeker.JobseekerLogin(email, password));
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public Jobseeker registerJobseeker(@RequestParam(value="name") String name,
+                                       @RequestParam(value="email") String email,
+                                       @RequestParam(value="password") String password)
     {
         Jobseeker jobseeker = new Jobseeker(DatabaseJobseeker.getLastId()+1, name, email, password);
         try {
