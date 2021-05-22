@@ -78,7 +78,7 @@ public class InvoiceController {
         return invoice;
     }
 
-    @RequestMapping(value = "/EWalletPayment", method = RequestMethod.POST)
+    @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(
             @RequestParam(value="jobs") ArrayList<Job> jobs,
             @RequestParam(value="jobseeker") Jobseeker jobseeker,
