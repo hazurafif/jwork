@@ -8,14 +8,11 @@ import java.util.ArrayList;
 @RequestMapping("/job")
 @RestController
 
-public class JobController extends Throwable {
+public class JobController {
 
     @RequestMapping("")
     public ArrayList<Job> getAllJob() {
-        ArrayList<Job> job = null;
-
-        job = DatabaseJob.getJobDatabase();
-        return job;
+        return DatabaseJob.getJobDatabase();
     }
 
     @RequestMapping("/{id}")
@@ -34,7 +31,6 @@ public class JobController extends Throwable {
     public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
         ArrayList<Job> job = null;
         job = DatabaseJob.getJobByRecruiter(recruiterId);
-
         return job;
     }
 

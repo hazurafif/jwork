@@ -4,10 +4,7 @@ package hanifzufarrafif.jwork.controller;
 import hanifzufarrafif.jwork.Bonus;
 import hanifzufarrafif.jwork.DatabaseBonus;
 import hanifzufarrafif.jwork.ReferralCodeAlreadyExistsException;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -20,8 +17,8 @@ public class BonusController {
     }
     @RequestMapping(value = "/{referralCode}", method = RequestMethod.GET)
     public Bonus getBonusByReferralCode(
-            @RequestParam(value="referralCode") String referralCode){
-        return(DatabaseBonus.getBonusByRefferalCode(referralCode));
+            @PathVariable String referralCode){
+        return(DatabaseBonus.getBonusByReferralCode(referralCode));
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)

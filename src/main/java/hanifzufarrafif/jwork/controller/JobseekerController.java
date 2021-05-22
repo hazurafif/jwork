@@ -22,12 +22,6 @@ public class JobseekerController {
         return jobseeker;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
-                                    @RequestParam(value="password") String password){
-        return(DatabaseJobseeker.JobseekerLogin(email, password));
-    }
-
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Jobseeker registerJobseeker(@RequestParam(value="name") String name,
                                        @RequestParam(value="email") String email,
@@ -42,4 +36,12 @@ public class JobseekerController {
         }
         return jobseeker;
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
+                                    @RequestParam(value="password") String password){
+        return(DatabaseJobseeker.JobseekerLogin(email, password));
+    }
+
+
 }

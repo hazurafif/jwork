@@ -33,7 +33,7 @@ public class DatabaseBonus {
         throw new BonusNotFoundException(id);
     }
 
-    public static Bonus getBonusByRefferalCode(String refferalCode){
+    public static Bonus getBonusByReferralCode(String refferalCode){
         Bonus temp = null;
         for (Bonus bonus : BONUS_DATABASE) {
             if (refferalCode.equals(bonus.getReferralCode())) {

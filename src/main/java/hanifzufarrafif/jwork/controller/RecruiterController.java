@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-import static hanifzufarrafif.jwork.DatabaseRecruiter.getRecruiterDatabase;
-
 @RequestMapping("/recruiter")
 @RestController
 public class RecruiterController {
 
     @RequestMapping("")
     public ArrayList<Recruiter> getAllRecruiter() {
-        return getRecruiterDatabase();
+        return DatabaseRecruiter.getRecruiterDatabase();
     }
 
     @RequestMapping("/{id}")
@@ -30,6 +28,7 @@ public class RecruiterController {
 
         return recruiter;
     }
+
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Recruiter addRecruiter(@RequestParam(value="name") String name,
