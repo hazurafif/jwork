@@ -2,37 +2,39 @@ package hanifzufarrafif.jwork.controller;
 
 import hanifzufarrafif.jwork.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 
+/**
+ * Class InvoiceController untuk kontrol pengaturan database invoice
+ *
+ * @author Hanif Zufar Rafif
+ * @version 25.06.2021
+ */
 @RequestMapping("/invoice")
 @RestController
-
 public class InvoiceController {
 
-    @RequestMapping(" ")
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Invoice> getAllInvoice() {
-        return DatabaseInvoice.getInvoiceDatabase();
+        return(DatabaseInvoice.getInvoiceDatabase());
     }
 
     @RequestMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable int id) {
         Invoice invoice = null;
-        try{
+        try {
             invoice = DatabaseInvoice.getInvoiceById(id);
         } catch (InvoiceNotFoundException e) {
             e.getMessage();
             return null;
         }
+
         return invoice;
     }
 
-    @RequestMapping("/Jobseeker/{JobseekerId}")
-    public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerid) {
-        ArrayList<Invoice> invoice = null;
-        invoice = DatabaseInvoice.getInvoiceByJobseeker(jobseekerid);
-
-        return invoice;
+    @RequestMapping("/jobseeker/{jobseekerId}")
+    public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
+        return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
     }
 
     @RequestMapping(value = "invoiceStatus/{id}", method = RequestMethod.PUT)
@@ -61,29 +63,30 @@ public class InvoiceController {
         return false;
     }
 
-    public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
-                                  @RequestParam(value = "jobseekerId") int jobseekerId,
-                                  @RequestParam(value = "adminFee") int adminFee) {
+    @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
+    public Invoice addBankPayment(@RequestParam(value ="jobIdList") ArrayList<Integer> jobIdList,
+                                  @RequestParam(value ="jobseekerId") int jobseekerId,
+                                  @RequestParam(value ="adminFee") int adminFee){
         Invoice invoice = null;
         ArrayList<Job> jobs = null;
-        for (Integer integer : jobIdList) {
+        for(var i = 0; i < jobIdList.size(); i++) {
             try {
-                jobs.add(DatabaseJob.getJobById(integer));
+                jobs.add(DatabaseJob.getJobById(jobIdList.get(i)));
             } catch (JobNotFoundException e) {
                 e.getMessage();
             }
         }
         try {
-            invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
+            invoice = new BankPayment(DatabaseInvoice.getLastId()+1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
             invoice.setTotalFee();
         } catch (JobSeekerNotFoundException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         boolean status = false;
         try {
             status = DatabaseInvoice.addInvoice(invoice);
         } catch (OngoingInvoiceAlreadyExistsException e) {
-            e.printStackTrace();
+            e.getMessage();
         }
         if (status) {
             return invoice;
@@ -106,7 +109,7 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByReferralCode(referralCode));
+            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByRefferalCode(referralCode));
             invoice.setTotalFee();
         } catch (JobSeekerNotFoundException e) {
             e.printStackTrace();
@@ -123,4 +126,5 @@ public class InvoiceController {
             return null;
         }
     }
+
 }

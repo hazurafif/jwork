@@ -1,4 +1,11 @@
 package hanifzufarrafif.jwork;
+
+/**
+ * FeeCalculator class untuk menghitung fee
+ *
+ * @author Hanif Zufar Rafif
+ * @version 24.06.2021
+ */
 public class FeeCalculator implements Runnable{
     private Invoice invoice;
 
@@ -8,8 +15,9 @@ public class FeeCalculator implements Runnable{
 
     @Override
     public void run(){
-        System.out.println("Calculating invoice id: " + invoice.getId());
+        System.out.println("Calculate invoice id: " + invoice.getId());
         invoice.setTotalFee();
-        System.out.println("Finished calculating invoice id: " + invoice.getId());
+        System.out.println("Finished calculate invoice id: " + invoice.getId());
     }
 }
+

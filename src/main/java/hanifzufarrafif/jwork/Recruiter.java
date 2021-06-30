@@ -1,11 +1,11 @@
 package hanifzufarrafif.jwork;
+
 /**
- * Write a description of class Recruiter here.
+ * Recruiter class untuk perekrut dan digunakan untuk mengatur segala data yang terkait dengan informasi perekrut atau rekrut pegawai
  *
  * @author Hanif Zufar Rafif
- * @version 18/03/2021
+ * @version 24.06.2021
  */
-
 public class Recruiter
 {
     // instance variables - replace the example below with your own
@@ -14,122 +14,122 @@ public class Recruiter
     private String email;
     private String phoneNumber;
     private Location location;
-    
+
     /**
-     * Recruiter untuk membuat recruiter
+     * Constructor for objects of class Recruiter
      *
-     * @param id - merupakan nilai inputan untuk variable id
-     * @param name - merupakan nilai inputan untuk variable name
-     * @param email - merupakan nilai inputan untuk variable email
-     * @param phoneNumber - merupakan nilai inputan untuk variable phoneNumber
-     * @param location - merupakan nilai inputan untuk object location
-     * @return object Recruiter
+     * @param id = nilai inputan untuk variable id
+     * @param name  = nilai inputan untuk variable name
+     * @param email  = nilai inputan untuk variable email
+     * @param phoneNumber = nilai inputan untuk variable phoneNumber
+     * @param location = nilai inputan untuk variable location
      */
-    public Recruiter(int id, String name, String email, String phoneNumber, Location location){
+    public Recruiter(int id, String name, String email, String phoneNumber,
+                     Location location)
+    /** Digunakan sebuah keyword 'this'.
+     * Tujuaanya untuk menyatakan atau mereferensikan variable yang ada didalam class itu sendiri*/
+    {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.location = location;
     }
-    
     /**
-     * getId untuk mengambil id
-     *
-     * @return id
+     * method getId untuk memperoleh data id.
+     * termasuk dalam method accessor (get)
+     * @return id = mengembalikan nilai variabel
      */
-    public int getId(){
+    public int getId()
+    {
         return id;
     }
-    
     /**
-     * getName untuk mengambil name
-     *
-     * @return name
+     * method getName untuk memperoleh data name.
+     * termasuk dalam method accessor (get)
+     * @return id = mengembalikan nilai variabel
      */
-    public String getName(){
+    public String getName()
+    {
         return name;
     }
-    
     /**
-     * getEmail untuk mengambil email
-     *
-     * @return email
+     * method getEmail untuk memperoleh data email.
+     * termasuk dalam method accessor (get)
+     * @return id = mengembalikan nilai variabel
      */
-    public  String getEmail(){
+    public String getEmail()
+    {
         return email;
     }
-    
     /**
-     * getPhoneNumber untuk mengambil PhoneNumber
-     *
-     * @return PhoneNumber
+     * method getPhoneNumber untuk memperoleh data phoneNumber.
+     * termasuk dalam method accessor (get)
+     * @return id = mengembalikan nilai variabel
      */
-    public String getPhoneNumber(){
+    public String getPhoneNumber()
+    {
         return phoneNumber;
     }
-    
     /**
-     * getLocation untuk mengambil getLocation
-     *
-     * @return location
+     * method getLocation untuk memperoleh data location.
+     * termasuk dalam method accessor (get)
+     * @return id = mengembalikan nilai variabel
      */
-    public Location getLocation(){
+    public Location getLocation()
+    {
         return location;
     }
-    
     /**
-     * setId untuk mengisi id
-     *
-     * @param  id
-     * @return id
+     * method setId untuk menetapkan nilai variabel id.
+     * termasuk dalam method mutator (set)
+     * @param id digunakan sebagai inputan untuk variable
      */
-    public void setId(int id){
+    public void setId(int id)
+    {
         this.id = id;
     }
-    
     /**
-     * setEmail untuk mengisi email
-     *
-     * @param email
-     * @return email
+     * method setEmail untuk menetapkan nilai variabel email.
+     * termasuk dalam method mutator (set)
+     * @param email digunakan sebagai inputan untuk variable
      */
-    public void setEmail(String email){
+    public void setEmail(String email)
+    {
         this.email = email;
     }
-    
     /**
-     * setName untuk mengisi name
-     *
-     * @param name
-     * @return name
+     * method setName untuk menetapkan nilai variabel name.
+     * termasuk dalam method mutator (set)
+     * @param name digunakan sebagai inputan untuk variable
      */
-    public void setName(String name){
+    public void setName(String name)
+    {
         this.name = name;
     }
-    
     /**
-     * setPhoneNumber untuk mengisi PhoneNumber
-     *
-     * @param PhoneNumber
-     * @return PhoneNumber
+     * method setPhoneNumber untuk menetapkan nilai variabel phoneNumber.
+     * termasuk dalam method mutator (set)
+     * @param phoneNumber digunakan sebagai inputan untuk variable
      */
-    public void setPhoneNumber(String phoneNumber){
+    public void setPhoneNumber(String phoneNumber)
+    {
         this.phoneNumber = phoneNumber;
     }
-    
     /**
-     * setLocation untuk mengisi Location
-     *
-     * @param Location object location
-     * @return location
+     * method setLocation untuk menetapkan nilai variabel location.
+     * termasuk dalam method mutator (set)
+     * @param location digunakan sebagai inputan untuk variable
      */
-    public void setLocation(Location location){
+    public void setLocation(Location location)
+    {
         this.location = location;
     }
-    
-    public String toString(){
-        return "Id = " +getId()+ "\nNama = " +getName()+"\nEmail = " +getEmail()+"\nLocation = " +getLocation();
+    /**
+     * method printData untuk dengan return void.
+     * mencetak nilai variabel name
+     */
+    public String toString() {
+        return "ID= "+id+"\nName= "+name+"\nPhoneNumber= "+phoneNumber+"\nLocation= "+location+"\n";
     }
 }
-

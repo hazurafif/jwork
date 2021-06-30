@@ -3,14 +3,14 @@ package hanifzufarrafif.jwork;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseBonus here.
+ * DatabaseBonus class untuk rincian dan tempat penyimpanan data bonus dalam database
  *
  * @author Hanif Zufar Rafif
- * @version 01/04/2021
+ * @version 24.06.2021
  */
-public class DatabaseBonus {
-    // instance variables
-    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<>();
+public class DatabaseBonus
+{
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
     private static int lastId = 0;
 
     public static ArrayList<Bonus> getBonusDatabase(){
@@ -21,6 +21,11 @@ public class DatabaseBonus {
         return lastId;
     }
 
+    /**
+     * method getBonus, mendapatkan job yang terdaftar dari database bonus
+     *
+     * @return null = tidak ada nilai yang dikembalikan
+     */
     public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus temp = null;
 
@@ -33,20 +38,21 @@ public class DatabaseBonus {
         throw new BonusNotFoundException(id);
     }
 
-    public static Bonus getBonusByReferralCode(String refferalCode){
-        Bonus temp = null;
+    public static Bonus getBonusByRefferalCode(String refferalCode){
+        Bonus x = null;
         for (Bonus bonus : BONUS_DATABASE) {
             if (refferalCode.equals(bonus.getReferralCode())) {
-                temp = bonus;
+                x = bonus;
             }
         }
-        return temp;
+        return x;
     }
-    
+
     /**
-     * addBonus untuk menambah bonus
-     * @param bonus
-     * @return boolean
+     * method addBonus, menambahkan job ke database bonus
+     *
+     * @param bonus digunakan sebagai inputan untuk method bonus
+     * @return false = mengembalikan nilai boolean "false"
      */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
         for (Bonus element : BONUS_DATABASE) {
@@ -60,31 +66,31 @@ public class DatabaseBonus {
     }
 
     public static boolean activateBonus(int id){
-        boolean temp = false;
+        boolean x = false;
         for (Bonus bonus : BONUS_DATABASE) {
             if (id == bonus.getId()) {
                 bonus.setActive(true);
-                temp = true;
+                x = true;
             }
         }
-        return temp;
+        return x;
     }
 
     public static boolean deactivateBonus(int id){
-        boolean temp = false;
+        boolean x = false;
         for (Bonus bonus : BONUS_DATABASE) {
             if (id == bonus.getId()) {
                 bonus.setActive(false);
-                temp = true;
+                x = true;
             }
         }
-        return temp;
+        return x;
     }
-
     /**
-     * removeBonus untuk menghapus bonus
-     * @param id
-     * @return boolean
+     * method removeBonus, menghapus job dari database bonus
+     *
+     * @param id digunakan sebagai inputan untuk method bonus
+     * @return false = mengembalikan nilai boolean "false"
      */
     public static boolean removeBonus(int id) throws BonusNotFoundException {
         for (Bonus bonus : BONUS_DATABASE) {
@@ -95,5 +101,5 @@ public class DatabaseBonus {
         }
         throw new BonusNotFoundException(id);
     }
-}
 
+}

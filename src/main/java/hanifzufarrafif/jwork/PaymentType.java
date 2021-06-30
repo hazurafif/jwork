@@ -1,27 +1,23 @@
 package hanifzufarrafif.jwork;
+
 /**
- * Enumeration class PaymentType - write a description of the enum class here
+ * Enumeration PaymentType Class untuk merilis/merinci metode pembayaran apa aja yang ada
  *
  * @author Hanif Zufar Rafif
- * @version 25/03/2021
+ * @version 24.06.2021
  */
 public enum PaymentType
 {
-    BankPayment("BankPayment"), 
-    EwalletPayment("EwalletPayment");
-    
-    private String type;
-    /**
-     * PaymentType untuk mengisi type
-     *
-     * @param variable type     
-    */
+    BankPayment("Bank Payment"),
+    EwalletPayment("E-wallet Payment");
+
+    private final String type;
+
     private PaymentType(String type){
         this.type = type;
     }
-    
-    @Override
-    public String toString(){
+
+    public String toString() {
         return type;
     }
 }

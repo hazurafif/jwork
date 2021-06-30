@@ -5,16 +5,21 @@ import hanifzufarrafif.jwork.Location;
 import hanifzufarrafif.jwork.Recruiter;
 import hanifzufarrafif.jwork.RecruiterNotFoundException;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 
+/**
+ * Class RecruiterController untuk kontrol pengaturan database recruiter
+ *
+ * @author Hanif Zufar Rafif
+ * @version 25.06.2021
+ */
 @RequestMapping("/recruiter")
 @RestController
 public class RecruiterController {
 
     @RequestMapping("")
     public ArrayList<Recruiter> getAllRecruiter() {
-        return DatabaseRecruiter.getRecruiterDatabase();
+        return(DatabaseRecruiter.getRecruiterDatabase());
     }
 
     @RequestMapping("/{id}")
@@ -28,7 +33,6 @@ public class RecruiterController {
 
         return recruiter;
     }
-
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Recruiter addRecruiter(@RequestParam(value="name") String name,

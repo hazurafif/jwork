@@ -2,17 +2,18 @@ package hanifzufarrafif.jwork;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseJobseeker here.
+ * DatabaseJobseeker class untuk rincian dan tempat penyimpanan data jobseeker dalam database
  *
  * @author Hanif Zufar Rafif
- * @version 25/03/2021
+ * @version 24.06.2021
  */
-public class DatabaseJobseeker{
-    // instance variables
+public class DatabaseJobseeker
+{
+    // instance variables - replace the example below with your own
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
     private static int lastId = 0;
 
-    public static ArrayList<Jobseeker> getDatabaseJobseeker() {
+    public static ArrayList<Jobseeker> getJobseekerDatabase() {
         return JOBSEEKER_DATABASE;
     }
 
@@ -20,22 +21,31 @@ public class DatabaseJobseeker{
         return lastId;
     }
 
+    /**
+     * method getJobseeker, mendapatkan jobseeker yang terdaftar dari database jobseeker
+     *
+     * @return null = tidak ada nilai yang dikembalikan
+     */
     public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException{
-        Jobseeker temp = null;
-        for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
-            if (id == jobseeker.getId()) {
-                temp = jobseeker;
-                return temp;
+        Jobseeker x = null;
+        try{
+            for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+                if (id == jobseeker.getId()) {
+                    x = jobseeker;
+                }
             }
         }
-        throw new JobSeekerNotFoundException(id);
+        catch (Exception e){
+            throw new JobSeekerNotFoundException(id);
+        }
+        return x;
     }
 
     /**
-     * addJobseeker untuk menambahkan jobseeker
+     * method addJobseeker, menambahkan data jobseeker ke database jobseeker
      *
-     * @param jobseeker
-     * @return boolean
+     * @param jobseeker digunakan sebagai inputan untuk method ini
+     * @return false = mengembalikan nilai boolean "false"
      */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
         for (Jobseeker element : JOBSEEKER_DATABASE) {
@@ -47,12 +57,11 @@ public class DatabaseJobseeker{
         lastId = jobseeker.getId();
         return true;
     }
-
     /**
-     * removeJobseeker menghapus jobseeker
+     * method removeJobseeker, menghapus data jobseeker ke database jobseeker
      *
-     * @param id
-     * @return boolean
+     * @param id digunakan sebagai inputan untuk method ini
+     * @return false = mengembalikan nilai boolean "false"
      */
     public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException {
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
@@ -64,7 +73,7 @@ public class DatabaseJobseeker{
         throw new JobSeekerNotFoundException(id);
     }
 
-    public static Jobseeker JobseekerLogin(String email, String password){
+    public static Jobseeker getJobseekerLogin(String email, String password){
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
             if (jobseeker.getEmail().equals(email) && jobseeker.getPassword().equals(password)) {
                 return jobseeker;
@@ -72,5 +81,6 @@ public class DatabaseJobseeker{
         }
         return null;
     }
+
 
 }

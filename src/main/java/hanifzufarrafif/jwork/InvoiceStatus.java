@@ -1,23 +1,24 @@
 package hanifzufarrafif.jwork;
+
 /**
- * Enumeration class InvoiceStatus - write a description of the enum class here
+ *  InvoiceStatus class enum untuk merinci status dalam invoice
  *
  * @author Hanif Zufar Rafif
- * @version 27/03/2021
+ * @version 24.06.2021
  */
 public enum InvoiceStatus
 {
-    OnGoing("OnGoing"), 
+    OnGoing("OnGoing"),
     Finished("Finished"),
     Cancelled("Cancelled");
-    
-    private String status;
-    
+
+    private final String status;
+
     private InvoiceStatus(String status){
         this.status = status;
     }
-    
-    public String toString(){
+
+    public String toString() {
         return status;
     }
 }

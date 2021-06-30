@@ -2,17 +2,24 @@ package hanifzufarrafif.jwork.controller;
 
 import hanifzufarrafif.jwork.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 
+/**
+ * Class JobController untuk kontrol pengaturan database job
+ *
+ * @author Hanif Zufar Rafif
+ * @version 25.06.2021
+ */
 @RequestMapping("/job")
 @RestController
-
 public class JobController {
 
     @RequestMapping("")
     public ArrayList<Job> getAllJob() {
-        return DatabaseJob.getJobDatabase();
+        ArrayList<Job> job = null;
+
+        job = DatabaseJob.getJobDatabase();
+        return job;
     }
 
     @RequestMapping("/{id}")
@@ -31,6 +38,7 @@ public class JobController {
     public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
         ArrayList<Job> job = null;
         job = DatabaseJob.getJobByRecruiter(recruiterId);
+
         return job;
     }
 
@@ -42,24 +50,21 @@ public class JobController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public Job addJob(@RequestParam(value="name") String name,
-                      @RequestParam(value="fee") int fee,
-                      @RequestParam(value="category") JobCategory category,
-                      @RequestParam(value="recruiterId") int recruiterId)
-    {
+    public Job addJob(@RequestParam(value = "name") String name,
+                      @RequestParam(value = "fee") int fee,
+                      @RequestParam(value = "category") String category,
+                      @RequestParam(value = "recruiterId") int recruiterId) {
         Job job = null;
         try {
-            job = new Job(DatabaseJobseeker.getLastId()+1, name, DatabaseRecruiter.getRecruiterById(recruiterId), fee, category);
+            job = new Job(DatabaseJob.getLastId() + 1, name, DatabaseRecruiter.getRecruiterById(recruiterId), fee, JobCategory.valueOf(category));
         } catch (RecruiterNotFoundException e) {
             e.getMessage();
         }
-
-        Boolean status = DatabaseJob.addJob(job);
-        if(status == true){
-            return job  ;
+        boolean status = DatabaseJob.addJob(job);
+        if (status == true) {
+            return job;
         } else {
             return null;
         }
     }
-
 }

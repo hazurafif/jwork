@@ -1,60 +1,69 @@
 package hanifzufarrafif.jwork;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
- * Write a description of class EwalletPayment here.
+ * EwalletPayment class untuk merinci pembayaran cashless dengan bonus dan referral code
  *
  * @author Hanif Zufar Rafif
- * @version 01/04/2021
+ * @version 24.06.2021
  */
-
 public class EwalletPayment extends Invoice
 {
-    // instance variables
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
-    
     /**
      * Constructor for objects of class EwalletPayment
-     *
-     * @param id - merupakan nilai inputan untuk variable id
-     * @param jobs - merupakan nilai inputan untuk variable job
-     * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
+     * @param id = nilai input variabel id
+     * @param jobs = nilai input variable job
+     * @param jobseeker = nilai input untuk variable jobseeker
+     * menggunakan metode keyword "super" dan "this"
      */
-    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
-        super(id, jobs, jobseeker);
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
+    /** menggunakan keyword 'super'.
+     * Bertujuan untuk menyatakan atau mereferensikan variabel */
+    {
+        super(id,jobs,jobseeker);
     }
-    
-    /**
-     * Constructor for objects of class EwalletPayment
-     * 
-     * @param id - merupakan nilai inputan untuk variable id
-     * @param jobs - merupakan nilai inputan untuk variable job
-     * @param jobseeker - merupakan nilai inputan untuk variable jobseeker
-     * @param bonus merupakan - nilai inputan untuk variable bonus
-     */
-    public EwalletPayment(int id, ArrayList<Job> jobs,Jobseeker jobseeker, Bonus bonus){
-        super(id, jobs, jobseeker);
+    /** @param bonus = nilai input untuk variable bonus */
+    public EwalletPayment(int id,ArrayList<Job> jobs,Jobseeker jobseeker,Bonus bonus)
+    /** menggunakan keyword "super" dan "this".
+     * Bertujuan untuk menyatakan atau mereferensikan variabel */
+    {
+        super(id,jobs,jobseeker);
         this.setBonus(bonus);
     }
-    
+    /**
+     * method getPaymentType,menambahkan nilai variabel PaymentType
+     * accessor (get)
+     * @return PAYMENT_TYPE = mengembalikkan nilai yang ada didalam variable PAYMENT_TYPE
+     */
     @Override
     public PaymentType getPaymentType(){
+        //To Do auto-generated method stub
         return PAYMENT_TYPE;
     }
-    
+    /**
+     * method getBonus, menambahkan rincian nilai bonus
+     * accessor (get)
+     * @return bonus = mengembalikkan nilai yang ada didalam variable bonus
+     */
     public Bonus getBonus(){
         return bonus;
     }
-    
+    /**
+     * method setBonus, menetapkan nilai variabel bonus
+     * mutator (set)
+     * @param bonus = sebagai inputan untuk variable bonus
+     */
     public void setBonus(Bonus bonus){
-        this.bonus=bonus;
+        this.bonus = bonus;
     }
-
+    /**
+     * method setTotalFee, menetapkan nilai variabel totalFee
+     * mutator (set)
+     * terdapat kondisi untuk memenuhi nilai akhir totalFee yang dipengaruhi extraFee
+     */
     @Override
     public void setTotalFee() {
         ArrayList<Job> jobs = getJobs();
@@ -67,7 +76,11 @@ public class EwalletPayment extends Invoice
             }
         }
     }
-
+    /**
+     * method printData untuk dengan return void.
+     * mencetak data sesuai variabel
+     * terdapat kondisi untuk menambahkan nilai totalFee yang dipengaruhi referralCode
+     */
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");

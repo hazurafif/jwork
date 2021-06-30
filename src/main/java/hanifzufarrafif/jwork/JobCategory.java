@@ -1,28 +1,29 @@
 package hanifzufarrafif.jwork;
+
 /**
- * Enumeration class JobCategory - write a description of the enum class here
+ * JobCategory Class enum untuk merilis/merinci pekerjaan apa aja yang ada
  *
  * @author Hanif Zufar Rafif
- * @version 25/03/2021
+ * @version 24.06.2021
  */
 public enum JobCategory
 {
-    WebDeveloper("WebDeveloper"),
-    FrontEnd("FrontEnd"), 
-    BackEnd("BackEnd"),
+    WebDeveloper("Web Developer"),
+    FrontEnd("Front End"),
+    BackEnd("Back End"),
     UI("UI"),
     UX("UX"),
-    Devops("Devops"), 
-    DataScientist("DataScientist"), 
-    DataAnalyst("DataAnalyst");
-    
-    private String category;
+    Devops("Devops"),
+    DataScientist("Data Scientist"),
+    DataAnalyst("Data Analyst");
 
-    private JobCategory(String category) {
+    private final String category;
+
+    private JobCategory(String category){
         this.category = category;
     }
-
     public String toString() {
         return category;
     }
+
 }
